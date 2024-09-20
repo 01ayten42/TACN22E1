@@ -1,0 +1,46 @@
+using System;
+
+namespace EmployeeApp
+{
+    // Define an interface called IQuittable
+    public interface IQuittable
+    {
+        // Define a void method called Quit
+        void Quit();
+    }
+
+    // Define a class named Employee that implements the IQuittable interface
+    public class Employee : IQuittable
+    {
+        // Properties of the Employee class
+        public string Name { get; set; }
+        public int Id { get; set; }
+
+        // Implement the Quit method from the IQuittable interface
+        public void Quit()
+        {
+            // Display a message indicating the employee has quit
+            Console.WriteLine($"{Name} has quit the job.");
+        }
+    }
+
+    class Program
+    {
+        // The Main method where the application starts
+        static void Main(string[] args)
+        {
+            // Create an instance of the Employee class
+            Employee employee = new Employee
+            {
+                Name = "John Doe", // Set the employee's name
+                Id = 1 // Set the employee's ID
+            };
+
+            // Create an object of type IQuittable, using polymorphism
+            IQuittable quittableEmployee = employee;
+
+            // Call the Quit method on the IQuittable interface reference
+            quittableEmployee.Quit();
+        }
+    }
+}
