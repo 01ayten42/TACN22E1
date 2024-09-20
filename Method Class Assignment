@@ -1,0 +1,36 @@
+using System;
+
+namespace MathOperationApp
+{
+    // Define a class named MathOperations
+    class MathOperations
+    {
+        // Define a method named PerformOperation
+        // This method takes two integers as parameters
+        public void PerformOperation(int number1, int number2)
+        {
+            // Perform a simple math operation on the first integer (addition in this case)
+            int result = number1 + 5;
+
+            // Display the result of the math operation and the second integer
+            Console.WriteLine($"Result of adding 5 to {number1} is: {result}");
+            Console.WriteLine($"The second integer is: {number2}");
+        }
+    }
+
+    class Program
+    {
+        // The Main method where the application starts
+        static void Main(string[] args)
+        {
+            // Instantiate the MathOperations class
+            MathOperations mathOps = new MathOperations();
+
+            // Call the PerformOperation method, passing in two integers
+            mathOps.PerformOperation(10, 20);
+
+            // Call the PerformOperation method again, specifying parameters by name
+            mathOps.PerformOperation(number1: 15, number2: 25);
+        }
+    }
+}
